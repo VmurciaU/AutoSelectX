@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="min-h-screen bg-gray-900 text-white py-16 px-4 sm:px-8">
+  <div class="max-w-7xl mx-auto">
+
+    <h2 class="text-2xl font-semibold text-teal-400 mb-6">
+      👥 Gestión de Usuarios
+    </h2>
+
+    <div class="overflow-x-auto bg-gray-800 rounded-lg shadow-md p-4">
+      {% if usuarios %}
+      <table class="min-w-full text-sm text-gray-300">
+        <thead>
+          <tr class="border-b border-gray-700 text-left">
+            <th class="py-2 px-4">Nombre</th>
+            <th class="py-2 px-4">Correo</th>
+            <th class="py-2 px-4">Rol</th>
+            <th class="py-2 px-4">Estado</th>
+            <th class="py-2 px-4">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for usuario in usuarios %}
+          <tr class="hover:bg-gray-700 transition duration-150">
+            <td class="py-2 px-4">{{ usuario.nombre }}</td>
+            <td class="py-2 px-4">{{ usuario.email }}</td>
+            <td class="py-2 px-4 capitalize">{{ usuario.rol }}</td>
+            <td class="py-2 px-4">
+              {% if usuario.activo %}
+                <span class="text-green-400 font-medium">Activo</span>
+              {% else %}
+                <span class="text-red-400 font-medium">Inactivo</span>
+              {% endif %}
+            </td>
+            <td class="py-2 px-4 flex flex-wrap gap-2">
+              <form method="POST" action="/usuarios/estado/{{ usuario.id }}">
+                <button type="submit"
+                        class="bg-yellow-500 hover:bg-yellow-600 text-white px-3 py-1 rounded text-xs">
+                  {% if usuario.activo %} Desactivar {% else %} Activar {% endif %}
+                </button>
+              </form>
+              <form method="POST" action="/usuarios/rol/{{ usuario.id }}">
+                <button type="submit"
+                        class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded text-xs">
+                  Cambiar Rol
+                </button>
+              </form>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      {% else %}
+      <p class="text-gray-400">No hay usuarios registrados.</p>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,9 @@
+Code,Description,Note,Derate,Price
+N,Standard Aluminum Manual Micrometer,,No,0
+S,Stainless Steel Manual Micrometer with SS Plug,,No,270
+L,Stainless Steel Locking Manual Micrometer (API 675) with SS Plug,,Si,401
+W,Milton Roy Actuator Capacity Controller (ACC) IP68 / NEMA 4 ,# 0280088010N-CW,Si,3107
+E,Actuator Capacity Controller (ACC) Ex-proof ,# 0280087010N-CW,Si,3402
+J,"Actuator Capacity Controller (ACC HART) IP68; Fieldbus HART Protocol 7.0 version or 4-20 mA I/O analog signal; 24VDC; 85V to 260V 1 phase 50/60Hz, -40°C/°F",,Si,3978
+H,"Actuator Capacity Controller (ACC HART) Ex-proof; Fieldbus HART Protocol 7.0 version or 4-20 mA I/O analog signal; 24VDC; 85V to 260V 1 phase 50/60Hz, -40°C/°F",,Si,4282
+P,Pneumatic Actuator,,Si,7119

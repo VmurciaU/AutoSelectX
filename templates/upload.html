@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="min-h-screen bg-gray-900 text-white py-20 px-8">
+  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+
+    <!-- Sección de descripción -->
+    <div class="md:col-span-2 space-y-6">
+      <div class="bg-gray-800 p-6 rounded-lg shadow-md">
+        <h2 class="text-xl font-semibold text-teal-300">Acerca de AutoSelect-X</h2>
+        <p class="text-sm text-gray-300 mt-2">
+          Esta aplicación inteligente te permite cargar documentos técnicos (Hojas de Datos y Manuales de Requisitos) para extraer automáticamente información clave.
+          Sube tus archivos PDF y luego podrás realizar búsquedas y consultas sobre los requisitos técnicos directamente.
+        </p>
+      </div>
+
+      <!-- Instrucciones -->
+      <div class="bg-gray-800 p-6 rounded-lg shadow-md">
+        <h3 class="text-lg font-semibold text-teal-300 mb-2">Instrucciones</h3>
+        <p class="text-sm text-gray-300 mb-2">
+          Bienvenido a la sección de carga de documentos. Por favor, sube los archivos PDF correspondientes a HD o MR.
+        </p>
+        <ul class="text-sm text-gray-400 list-disc list-inside">
+          <li><strong>Tipos de archivos aceptados:</strong> .pdf</li>
+          <li><strong>Consideraciones:</strong> Asegúrate de que los documentos sean legibles y estén en formato estándar.</li>
+        </ul>
+      </div>
+
+      <!-- Formulario de carga -->
+      <form method="POST" action="/upload" enctype="multipart/form-data" class="space-y-4">
+        <div>
+          <label for="file" class="block text-sm font-medium mb-1">Seleccionar documento</label>
+          <input type="file" id="file" name="file" accept=".pdf"
+                 class="bg-gray-700 text-white w-full border border-gray-600 px-3 py-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+        </div>
+        <button type="submit"
+                class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded transition">
+          Cargar Documento
+        </button>
+      </form>
+
+      <!-- Botón buscar -->
+      <form action="/buscar" method="GET">
+        <button type="submit"
+                class="bg-green-500 hover:bg-green-600 text-white font-semibold px-6 py-2 rounded transition mt-4">
+          Buscar
+        </button>
+      </form>
+    </div>
+
+    <!-- Lista de archivos subidos -->
+    <div class="bg-gray-800 p-6 rounded-lg shadow-md w-full max-w-lg">
+      <h3 class="text-xl font-semibold text-white mb-4 flex items-center gap-2">
+        📄 Documentos Cargados
+      </h3>
+      <hr class="border-gray-600 mb-4">
+      {% if files %}
+      <ul class="space-y-2">
+        {% for file in files %}
+        <li class="bg-gray-700 px-3 py-2 rounded text-gray-200 text-sm flex justify-between items-center">
+          <span class="break-words w-4/5">{{ file }}</span>
+          <form method="POST" action="/delete-file" class="ml-2">
+            <input type="hidden" name="filename" value="{{ file }}">
+            <button type="submit"
+                    class="bg-red-600 hover:bg-red-700 text-white text-xs font-semibold px-2 py-1 rounded transition">
+              Eliminar
+            </button>
+          </form>
+        </li>
+        {% endfor %}
+      </ul>
+      {% else %}
+      <p class="text-sm text-gray-400">No se han subido archivos aún.</p>
+      {% endif %}
+    </div>
+
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,10 @@
+Code,Note,Description,SelectionMaterial,Price (Alloy 20),Price (316L)
+PP,CodeSuction / CodeDischarge,"NPT Metallic Liquid ends horizontal 1/2"" Female Suction, 1/4"" Female Discharge",Metallic Liquid Ends,0,0
+AA,CodeSuction / CodeDischarge,"1/2"" 150# RF Thd Flange",Metallic Liquid Ends,589,353
+BB,CodeSuction / CodeDischarge,"1/2"" 300# RF Thd Flange",Metallic Liquid Ends,1101,429
+CC,CodeSuction / CodeDischarge,"1/2"" 600# RF Thd Flange",Metallic Liquid Ends,1260,477
+DD,CodeSuction / CodeDischarge,"1/2"" 150# RF Socket Weld Flange",Metallic Liquid Ends,721,500
+EE,CodeSuction / CodeDischarge,"1/2"" 300# RF Socket Weld Flange",Metallic Liquid Ends,1272,734
+FF,CodeSuction / CodeDischarge,"1/2"" 600# RF Socket Weld Flange",Metallic Liquid Ends,1582,744
+PP,CodeSuction / CodeDischarge,"NPT Plastic Liquid ends Vertical 1/2"" NPT Male Suction and Discharge",Plastic Liquid Ends,0,0
+11,CodeSuction / CodeDischarge,"1/2"" Plastic Thd Flange",Plastic Liquid Ends,782,81

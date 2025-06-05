@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% block title %}AutoSelect-X{% endblock %}</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <style>
+    .hero {
+      background-image: url("/static/images/futuristic-pump.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  </style>
+</head>
+<body class="text-white font-sans bg-gray-900">
+
+  <!-- Navbar -->
+  <header class="bg-gray-800 bg-opacity-90 fixed w-full z-50">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-xl font-bold">AutoSelect-X</h1>
+      <nav class="space-x-4">
+        <a href="/" class="hover:underline">Inicio</a>
+        <a href="/caracteristicas" class="hover:underline">Características</a>
+
+        {% if user_name %}
+          <a href="/upload" class="hover:underline">Carga</a>
+
+          {% if user_rol == "admin" %}
+            <a href="/usuarios" class="hover:underline">Gestión</a>
+          {% endif %}
+
+          <span class="text-white">👤 {{ user_name }}</span>
+          <a href="/logout" class="border border-white px-3 py-1 rounded hover:bg-white hover:text-gray-900 transition">Cerrar sesión</a>
+        {% else %}
+          <a href="/login" class="border border-white px-3 py-1 rounded hover:bg-white hover:text-gray-900 transition">Iniciar Sesión</a>
+        {% endif %}
+      </nav>
+    </div>
+  </header>
+
+  {% block content %}{% endblock %}
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-center text-white py-4">
+    © 2024 AutoSelect-X. Todos los derechos reservados.
+  </footer>
+
+</body>
+</html>

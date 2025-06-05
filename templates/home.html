@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Coding Challenge</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 p-8 font-sans">
+    <div class="max-w-2xl mx-auto bg-white rounded-xl shadow-md p-6">
+        <h1 class="text-xl font-semibold text-gray-800 mb-4">Bienvenido {{ name }}</h1>
+
+        <table class="min-w-full border border-gray-300">
+            <thead>
+                <tr class="bg-gray-200 text-gray-700">
+                    <th class="px-4 py-2 text-left border-b">Dog Name</th>
+                    <th class="px-4 py-2 text-left border-b">Dog Type</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for dog in dogs %}
+                <tr class="hover:bg-gray-100">
+                    <td class="px-4 py-2 border-b">{{ dog.name }}</td>
+                    <td class="px-4 py-2 border-b">{{ dog.type }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

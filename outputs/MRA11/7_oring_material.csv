@@ -1,0 +1,8 @@
+Code,Material,SelectionMaterial,Notes,Price
+V,Viton,Metallic Liquid Ends,Standard Offering,0
+E,EPDM,Metallic Liquid Ends,,41
+T,Teflex,Metallic Liquid Ends,,66
+K,Kalrez,Metallic Liquid Ends,,746
+T,Teflex,Plastic Liquid Ends,Standard Offering (NOT recommended for Sodium hypochlorite application),0
+V,Viton,Plastic Liquid Ends,Recommended for Sodium hypochlorite application,66
+E,EPDM,Plastic Liquid Ends,,41

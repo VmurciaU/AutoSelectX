@@ -1,0 +1,9 @@
+Code,Description,Price
+N,Standard production test - always included in tests below,0
+A,Customer witnessed standard test,659
+B,API linearity test - 5 point curve,440
+C,Customer witnessed API linearity test - 5 point curve,880
+D,"API repeatability test - 10 point curve - 5 ascending, 5 descending",585
+E,Witnessed API repeatability test,1171
+F,API package - 10 point curve with hydro component test (select component test N),824
+G,Witnessed API test package,1648

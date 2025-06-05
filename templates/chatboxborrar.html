@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat Inteligente - AI EngiQuote</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #0d1117;
+      color: #c9d1d9;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      background-color: #161b22;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.5);
+    }
+    h2 {
+      color: #58a6ff;
+    }
+    .chatbox {
+      height: 400px;
+      overflow-y: auto;
+      border: 1px solid #30363d;
+      padding: 15px;
+      border-radius: 8px;
+      background-color: #0d1117;
+      margin-bottom: 20px;
+    }
+    .message {
+      margin: 10px 0;
+    }
+    .user {
+      text-align: right;
+      color: #58a6ff;
+    }
+    .ai {
+      text-align: left;
+      color: #c9d1d9;
+    }
+    .chat-input {
+      display: flex;
+      gap: 10px;
+    }
+    .chat-input input {
+      flex: 1;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #30363d;
+      background-color: #0d1117;
+      color: #c9d1d9;
+    }
+    .chat-input button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      background-color: #238636;
+      color: white;
+      cursor: pointer;
+    }
+    .doc-tags {
+      margin-bottom: 10px;
+    }
+    .doc-tag {
+      background-color: #21262d;
+      color: #58a6ff;
+      padding: 5px 10px;
+      margin-right: 5px;
+      border-radius: 5px;
+      display: inline-block;
+      font-size: 0.85em;
+    }
+    .cotizacion-btn {
+      margin-top: 30px;
+      text-align: center;
+    }
+    .cotizacion-btn button {
+      background-color: #58a6ff;
+      color: #0d1117;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1em;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Asistente Técnico - AutoSelect-X</h2>
+
+    <div class="doc-tags">
+      <span class="doc-tag">HD-0234-XYZ.pdf</span>
+      <span class="doc-tag">ET-0415-ABC.pdf</span>
+    </div>
+
+    <div class="chatbox">
+      <div class="message ai">Hola, ¿en qué puedo ayudarte con los documentos cargados?</div>
+      <div class="message user">¿Cuál es el caudal especificado en el documento?</div>
+      <div class="message ai">El caudal indicado es de 120 LPH según la Hoja de Datos HD-0234-XYZ.pdf</div>
+    </div>
+
+    <div class="chat-input">
+      <input type="text" placeholder="Escribe tu consulta...">
+      <button>Enviar</button>
+    </div>
+
+    <div class="cotizacion-btn">
+      <button>Generar Cotización</button>
+    </div>
+  </div>
+</body>
+</html>
+
